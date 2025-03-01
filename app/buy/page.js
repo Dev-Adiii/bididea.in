@@ -30,15 +30,71 @@ const Buy = () => {
             </div>
           </div>
 
+          <div>
+            <h3 className="text-lg text-black font-semibold mb-4">Payment Method</h3>
+            <div className="flex items-center text-black space-x-4">
+              <span>QR Code</span>
+              <img src="/scan.png" alt="QR Code" className="w-24 h-24 my-2" />
+            </div>
+            <div className="flex items-center space-x-4 mt-4">
+              <span className="text-black">Payment App:</span>
+              <select 
+                className="bg-blue-200 rounded px-3 py-2 text-black"
+                id="paymentApp"
+                onChange={(e) => {
+                  // Reset transaction ID input when payment app changes
+                  document.getElementById('transactionId').value = '';
+                  document.getElementById('errorMessage').textContent = '';
+                }}
+              >
+                <option value="gpay">Google Pay</option>
+                <option value="phonepay">PhonePe</option>
+              </select>
+            </div>
+            <div className="flex flex-col mt-4">
+              <div className="flex items-center">
+                <span className="text-black mr-2">Transaction ID:</span>
+                <input 
+                  id="transactionId"
+                  type="text" 
+                  placeholder="Enter transaction ID"
+                  className="bg-blue-200 rounded px-3 py-2 text-black"
+                  onChange={(e) => {
+                    const paymentApp = document.getElementById('paymentApp').value;
+                    const transactionId = e.target.value;
+                    const errorElement = document.getElementById('errorMessage');
+                    
+                    if (paymentApp === 'gpay') {
+                      // Check if exactly 10 digits
+                      if (!/^\d{10}$/.test(transactionId)) {
+                        errorElement.textContent = 'Google Pay transaction ID must be entered correctly';
+                      } else {
+                        errorElement.textContent = '';
+                      }
+                    } else {
+                      // Check if exactly 23 characters with letters and numbers
+                      if (!/^[A-Za-z0-9]{23}$/.test(transactionId)) {
+                        errorElement.textContent = 'PhonePe transaction ID must be entered correctly';
+                      } else {
+                        errorElement.textContent = '';
+                      }
+                    }
+                  }}
+                />
+              </div>
+              <span id="errorMessage" className="text-red-500 text-sm mt-1"></span>
+            </div>
+          </div>
+
           <div className="space-y-4">
             <button 
               className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
               onClick={() => {
                 // Payment gateway integration would go here
-                alert("Payment gateway would open here");
+                alert("Submitted");
               }}
             >
-              Pay ₹499 Securely
+              Submit
             </button>
             
             <p className="text-sm text-gray-500 text-center">
