@@ -25,6 +25,9 @@ const page = () => {
                 <Link href="/sell" className="px-6 sm:px-8 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition duration-300 text-base sm:text-lg">
                   Sell ideas
                 </Link>
+                <Link href="/work" className="px-6 sm:px-8 py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-700 transition duration-300 text-base sm:text-lg">
+                  Work on my ideas
+                </Link>
               </div>
             </div>
 

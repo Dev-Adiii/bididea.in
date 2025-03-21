@@ -28,8 +28,8 @@ const footer = () => {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold">Services</h4>
               <ul className="space-y-2 text-sm sm:text-base">
-                <li><a href="/sell-idea" className="text-gray-400 hover:text-white transition duration-300">Sell Your Idea</a></li>
-                <li><a href="/buy-idea" className="text-gray-400 hover:text-white transition duration-300">Buy Ideas</a></li>
+                <li><a href="/sell" className="text-gray-400 hover:text-white transition duration-300">Sell Your Idea</a></li>
+                <li><a href="/buy" className="text-gray-400 hover:text-white transition duration-300">Buy Ideas</a></li>
                 <li><a href="/investor-registration" className="text-gray-400 hover:text-white transition duration-300">Become an Investor</a></li>
                 <li><a href="/idea-validation" className="text-gray-400 hover:text-white transition duration-300">Idea Validation</a></li>
               </ul>
