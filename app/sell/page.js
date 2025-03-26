@@ -16,26 +16,30 @@ const Sell = () => {
               
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Full Name
+                  Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="name"
+                  required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter your full name"
+                  placeholder="Enter your full name (required)"
                 />
+                <span id="nameError" className="text-red-500 text-sm mt-1 hidden">Please enter your full name</span>
               </div>
 
               <div>
                 <label htmlFor="upi" className="block text-sm font-medium text-gray-700 mb-1">
-                  UPI ID
+                  UPI ID <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="upi"
+                  required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter your UPI ID"
+                  placeholder="Enter your UPI ID (required)"
                 />
+                 <span id="upiError" className="text-red-500 text-sm mt-1 hidden">Please enter your UPI ID</span>
               </div>
             </div>
 
@@ -57,11 +61,12 @@ const Sell = () => {
 
               <div>
                 <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
-                  Idea Description
+                  Idea Description <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   id="description"
                   rows="6"
+                  required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Describe your idea in detail..."
                 ></textarea>
